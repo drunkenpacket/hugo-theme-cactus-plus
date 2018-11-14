@@ -3,17 +3,23 @@
     {{ $url := replace .Permalink .Site.BaseURL "" }}
         {{ if ne $url "about/" }}
             <li>
-                <aside class="dates">{{ .Date.Format "Jan 2" }}</aside>
+	        <div class="dates">{{ .Date.Format "01-02-2006" }}</div>
                 <a href='{{ .Permalink }}'>
                     {{ .Title }}
                     {{ if .Site.Params.enableSummary }}
                         {{ if .Site.Params.useDescriptionReplaceSummary }}
                             <h2>{{ .Description | plainify }}</h2>
                         {{ else }}
-                            <h2>{{ .Summary | plainify | htmlUnescape }}</h2>
+                            <h2>{{ .Summary | plainify | htmlUnescape }}
+			    {{ if .Truncated }}[more...] {{ end }}</h2>
                         {{ end }}
                     {{ end }}
                 </a>
+		<div class="author">
+		  {{ if isset .Params "author" }}
+		  -- {{ .Params.author }}
+		  {{ end }}
+		</div>
             </li>
         {{ end }}
     {{ end }}

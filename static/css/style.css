@@ -154,6 +154,11 @@ h2 {
     margin-bottom: 20px;
 }
 
+.profile #banner {
+    width: 60%;
+    height: auto;
+}
+
 .profile h1 {
     font-weight: 400;
     letter-spacing: 0px;
@@ -504,10 +509,11 @@ Post List
 }
 
 #post-list .dates {
-    float: right;
-    position: relative;
-    top: 1px;
-    font: 300 17px/1.8 "Helvetica Neue", helvetica, Arial, sans-serif;
+    color: #000;
+}
+
+#post-list .author {
+    line-height: 1.7;
     color: #bbb;
 }
 
@@ -678,10 +684,6 @@ h2.month {
 }
 
 #archive-list .dates {
-    float: right;
-    position: relative;
-    top: 1px;
-    font: 300 17px/1.7 "Helvetica Neue", helvetica, Arial, sans-serif;
     color: #bbb;
 }
 
